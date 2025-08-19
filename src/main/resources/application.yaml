@@ -1,0 +1,98 @@
+spring:
+  application:
+    name: franchise-management-api
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+
+  springdoc:
+    api-docs:
+      enabled: true
+      path: /v3/api-docs
+    swagger-ui:
+      enabled: true
+      path: /swagger-ui.html
+      try-it-out-enabled: true
+      operations-sorter: alpha
+      tags-sorter: alpha
+      display-request-duration: true
+      display-operation-id: true
+    show-actuator: true
+    group-configs:
+      - group: franchise-api
+        display-name: Franchise Management API
+        paths-to-match: /api/v1/**
+        packages-to-scan: com.nequi.franchise_api
+      - group: actuator
+        display-name: Actuator API
+        paths-to-match: /actuator/**
+
+  r2dbc:
+    url: r2dbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:franchise_nequi}
+    host: localhost
+    database: franchise_nequi
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:maicol123}
+    pool:
+      initial-size: 5
+      max-size: 20
+      max-idle-time: 30m
+      validation-query: SELECT 1
+
+  flyway:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:franchise_nequi}
+    user: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:maicol123}
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    repair: true
+    validate-on-migrate: true
+
+  jackson:
+    default-property-inclusion: NON_NULL
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: always
+    include-binding-errors: always
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,swagger-ui
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+app:
+  name: Franchise Management API
+  version: 1.0.0
+  description: Reactive API for managing franchises, branches, and products
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:4200}
+    allowed-methods: GET,POST,PUT,PATCH,DELETE,OPTIONS
+    allowed-headers: "*"
+    allow-credentials: true
+
+  database:
+    connection-timeout: 30s
+    statement-timeout: 60s
+
+logging:
+  level:
+    com.nequi.franchise: ${LOG_LEVEL:INFO}
+    org.springframework.data.r2dbc: DEBUG
+    io.r2dbc.postgresql: DEBUG
+    org.springframework.web.reactive: DEBUG
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"

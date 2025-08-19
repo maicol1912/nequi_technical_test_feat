@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "50223d7e-502f-41dd-9f67-631ca9818294",
+		"name": "NEQUI_TECHNICAL_TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24860457",
+		"_collection_link": "https://lively-firefly-905048.postman.co/workspace/NEQUI_TECHNICAL_TEST~85b1a354-0ec1-4bad-a92d-163a3e7f6ccb/collection/24860457-50223d7e-502f-41dd-9f67-631ca9818294?action=share&source=collection_link&creator=24860457"
+	},
+	"item": [
+		{
+			"name": "BRANCHES",
+			"item": [
+				{
+					"name": "GET_ALL_BRANCHES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/v1/branches/franchises/1f554ee2-baa4-4e0d-b180-fd6e46330c8a",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"branches",
+								"franchises",
+								"1f554ee2-baa4-4e0d-b180-fd6e46330c8a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ONE_BRANCHES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/v1/branches/254c0ac0-edcc-481b-807b-09170393c893",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"branches",
+								"254c0ac0-edcc-481b-807b-09170393c893"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE_BRANCH",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"JBL MANIZALES 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/branches/1f554ee2-baa4-4e0d-b180-fd6e46330c8a",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"branches",
+								"1f554ee2-baa4-4e0d-b180-fd6e46330c8a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_BRANCH",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"JBL MANIZALES ACTUALIZADO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/branches/254c0ac0-edcc-481b-807b-09170393c893",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"branches",
+								"254c0ac0-edcc-481b-807b-09170393c893"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FRANCHISE",
+			"item": [
+				{
+					"name": "GET_ALL_FRANCHISE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/v1/franchises",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"franchises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE_FRANCHISE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"JBL COMERCIANTES\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/franchises",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"franchises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_FRANCHISE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"JBL COMERCIANTES ACTUALIZADO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/franchises/1f554ee2-baa4-4e0d-b180-fd6e46330c8a",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"franchises",
+								"1f554ee2-baa4-4e0d-b180-fd6e46330c8a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ONE_FRANCHISE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/v1/franchises/1f554ee2-baa4-4e0d-b180-fd6e46330c8a",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"franchises",
+								"1f554ee2-baa4-4e0d-b180-fd6e46330c8a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MAX_PRODUT_BRANCH_BY_FRANCHISE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/v1/franchises/1f554ee2-baa4-4e0d-b180-fd6e46330c8a/products-max-stock",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"franchises",
+								"1f554ee2-baa4-4e0d-b180-fd6e46330c8a",
+								"products-max-stock"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HEALTH",
+			"item": [
+				{
+					"name": "HEALTCHECK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/v1/healthcheck",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"healthcheck"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCTS",
+			"item": [
+				{
+					"name": "CREATE_PRODUCT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"CARAMELO TOSTADO\",\r\n    \"stock\": 19\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/products/branch/08a61cea-828e-470a-9938-4f49a8a7a01a",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"branch",
+								"08a61cea-828e-470a-9938-4f49a8a7a01a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_PRODUCTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/v1/products",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_PRODUCT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"MACCCC2C\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/products/7f0eb6da-9922-4e89-ae0e-35a25734834e",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"7f0eb6da-9922-4e89-ae0e-35a25734834e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_PRODUCT_BY_ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/v1/products/a48baad8-71a7-47f7-a88d-6dbaae5ab18f",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"a48baad8-71a7-47f7-a88d-6dbaae5ab18f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_PRODUCT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"MACCCCC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/products/7f0eb6da-9922-4e89-ae0e-35a25734834e",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"7f0eb6da-9922-4e89-ae0e-35a25734834e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_PRODUCT_STOCK",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stock\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/products/a48baad8-71a7-47f7-a88d-6dbaae5ab18f/stock",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"a48baad8-71a7-47f7-a88d-6dbaae5ab18f",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
